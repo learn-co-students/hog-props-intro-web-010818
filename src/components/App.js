@@ -3,7 +3,7 @@ import MasterHog from '../containers/MasterHog'
 import Offspring from '../db.js'
 import '../App.css'
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super()
     this.state = {
@@ -13,11 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
+        <MasterHog offsprings={Offspring.offspring} />
       </div>
     )
   }
 
 }
-
-export default App
