@@ -17,12 +17,12 @@ class MasterHog extends Component {
 
 
   changeEyeColor(event) {
-    event.preventDefault()
-
+    this.setState({eyeColor: event.target.value})
   }
 
 
   render() {
+    console.log(this.state)
     return (
       <div>
 
@@ -31,19 +31,19 @@ class MasterHog extends Component {
             type="radio"
             name="eyeColor"
             value="blue"
-            onChange={this.changeEyeColor.bind(this)}>
+            onClick={this.changeEyeColor.bind(this)}>
           </input> Blue<br></br>
           <input
             type="radio"
             name="eyeColor"
             value="sun"
-            onChange={this.changeEyeColor.bind(this)}>
+            onClick={this.changeEyeColor.bind(this)}>
           </input> Sun<br></br>
           <input
             type="radio"
             name="eyeColor"
             value="glowing"
-            onChange={this.changeEyeColor.bind(this)}>
+            onClick={this.changeEyeColor.bind(this)}>
           </input> Glowing<br></br>
         </form>
 
@@ -55,7 +55,7 @@ class MasterHog extends Component {
           <img id="master-blaster" src={Master} alt='MasterBlaster' style={{height: 400}}></img>
         </div>
         <ul className="hoglist">
-          {/* render hog babies */}
+          {this.props.offspring.map(offspring => <BabyHog {...offspring} eyeColor={this.state.eyeColor} />)}
         </ul>
 
       </div>
