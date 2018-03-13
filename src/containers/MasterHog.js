@@ -16,7 +16,6 @@ class MasterHog extends Component {
   }
 
   changeEyeColor(e) {
-    e.preventDefault();
     this.setState({eyeColor: e.target.value})
   }
 
